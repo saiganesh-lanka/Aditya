@@ -1,0 +1,60 @@
+pointing in time copy the EBS volume
+
+EBS volumes are block-level of storage that you can attach to EC2 instance to provide additional storage
+
+An EC2 snapshot captures the data on an EBS volume, including the operating system, applications, and any data stored on the volume, at
+a specific moment
+
+snapshots allows you to create backup of your EBS volume.in the event of data loss or correption you can use these snapshots to restore 
+your volumes to a previous state
+
+
+snapshots can be used to migrate EBS volumes across different regions or availability zones
+
+
+
+these also optimizing storage space and redusing costs
+
+
+
+sudo su
+lsblk
+mkdir -p /mnt/ebs_vol    [make diectory]
+mkfs -t ext4 /dev/xvdb   [make file directory]
+file -s /dev/xvdb
+mount /dev/xvdb /mnt/ebs_vol
+lsblk
+cd /mnt/ebs_vol/
+cat >sai
+create snapcat in the volume
+in the snapchat create volume to the snapchat
+rm sai
+Attach the Snapchot created volume in the volumes
+lsblk
+mkdir -p /mnt/new_vol
+mount /dev/xvdc /mnt/new_vol
+df
+cd ..
+ls
+cd new_vol
+cat sai
+cp /mnt/new_vol/sai /mnt/ebs_vol/
+cd ..
+cd ebs_vol
+ls
+cat sai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
